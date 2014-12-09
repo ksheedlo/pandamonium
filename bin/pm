@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+'use strict';
+
+var entities = require('../lib/entities'),
+  _ = require('underscore');
+
+function usage() {
+  console.log('Usage: ' + process.argv.slice(0, 2).join(' ') + 
+    'TYPE COMMAND [OPTIONS]\n\n' +
+    '\twhere TYPE can be one of: (entities)');
+}
+
+if (process.argv.length < 3) {
+  usage();
+  process.exit(1);
+}
+
+var submodules = [{
+  module: entities,
+  type: 'entities'
+}];
+
+var module = _.findWhere(submodules, {type: process.argv[2]});
+if (!module) {
+  usage();
+  process.exit(1);
+}
+
+module.module.runCommand(process.argv.slice(3), function (err) {
+  if (err) {
+    console.error('An error occurred:', err);
+    process.exit(1);
+  } else {
+    process.exit(0);
+  }
+});
