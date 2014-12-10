@@ -20,5 +20,6 @@ try {
 
 module.exports = {
   RACKSPACE_USERNAME: configFile.username || '',
-  RACKSPACE_API_KEY: configFile.api_key || ''
+  RACKSPACE_API_KEY: configFile.api_key || '',
+  IDENTITY_ENDPOINT: configFile.identity_endpoint || null
 };
