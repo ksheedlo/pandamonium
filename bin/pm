@@ -2,6 +2,7 @@
 'use strict';
 
 var entities = require('../lib/entities'),
+  checks = require('../lib/checks'),
   notificationPlans = require('../lib/notification-plans'),
   notifications = require('../lib/notifications'),
   _ = require('underscore');
@@ -20,6 +21,9 @@ if (process.argv.length < 3) {
 var submodules = [{
   module: entities,
   type: 'entities'
+}, {
+  module: checks,
+  type: 'checks'
 }, {
   module: notificationPlans,
   type: 'notification_plans'
