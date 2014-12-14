@@ -10,7 +10,7 @@ var entities = require('../lib/entities'),
 function usage() {
   console.log('Usage: ' + process.argv.slice(0, 2).join(' ') + 
     ' TYPE COMMAND [OPTIONS]\n\n' +
-    '\twhere TYPE can be one of: (entities|notifications|notification_plans)');
+    '\twhere TYPE can be one of: (entities|checks|notifications|notification_plans)');
 }
 
 if (process.argv.length < 3) {
