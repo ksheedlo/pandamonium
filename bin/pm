@@ -5,6 +5,7 @@ var entities = require('../lib/entities'),
   checks = require('../lib/checks'),
   notificationPlans = require('../lib/notification-plans'),
   notifications = require('../lib/notifications'),
+  suppressions = require('../lib/suppressions'),
   _ = require('underscore');
 
 function usage() {
@@ -30,6 +31,9 @@ var submodules = [{
 }, {
   module: notifications,
   type: 'notifications'
+}, {
+  module: suppressions,
+  type: 'suppressions'
 }];
 
 var module = _.findWhere(submodules, {type: process.argv[2]});
