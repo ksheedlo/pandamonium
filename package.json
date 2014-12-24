@@ -4,7 +4,7 @@
   "description": "Create random entities, checks, alarms, notification plans and suppressions in Rackspace Cloud Monitoring",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "./node_modules/.bin/jshint lib bin"
   },
   "bin": {
     "pm": "./bin/pm"
@@ -34,5 +34,8 @@
     "node-cache": "^1.0.3",
     "request": "^2.50.0",
     "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.11"
   }
 }
