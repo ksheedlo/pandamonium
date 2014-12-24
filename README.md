@@ -32,6 +32,21 @@ you can quickly overrun your account's Cloud Monitoring limits for checks or ala
 to the UI at [Rackspace Cloud Intelligence](https://intelligence.rackspace.com) or
 roll your own API client.
 
+**Important:** pandamonium is a stupid tool. It doesn't understand human-readable
+labels, and needs raw object IDs from Cloud Monitoring when you specify Cloud
+Monitoring objects to any pandamonium command. For instance, you need to use
+`en123ABC` instead of `cloud-server-01`. When you specify a list of Cloud
+Monitoring objects to pandamonium, use a comma-separated list of object IDs. For
+example, this command specifies two entities and two alarms to
+`pm suppressions create`:
+
+```
+$ pm suppressions create --entities=en123ABC,en456DEF --alarms=al321BAZ,al911FOO
+```
+
+If you have a Cloud Monitoring object and don't know the ID, Cloud Intelligence
+is the best place to look it up.
+
 ### Entities
 
 ```
