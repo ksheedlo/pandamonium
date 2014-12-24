@@ -3,8 +3,9 @@ pandamonium
 
 ![](http://e226c44521bc93014891-95071af5d2ef5fa7fb6048ccd0393c38.r12.cf1.rackcdn.com/panda-licking-chops.gif)
 
-The panda-themed psuedomonitoring tool. Allows you to random entities, checks,
-alarms, notification plans and suppressions in Rackspace Cloud Monitoring.
+The panda-themed pseudomonitoring tool. Allows you to randomly create entities,
+checks, alarms, notification plans and suppressions in Rackspace Cloud
+Monitoring.
 
 ## Installation
 
