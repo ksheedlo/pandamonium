@@ -34,15 +34,91 @@ roll your own API client.
 
 ### Entities
 
+```
+$ pm entities create [-n COUNT]
+```
+
+Creates entities with random labels and IP addresses. To create many entities
+at once, pass the `-n` or `--count` option. This is an integer specifying how
+many entities to create. For instance,
+
+```
+$ pm entities create -n 500
+```
+
+creates 500 entities.
+
 ### Checks
+
+```
+pm checks create [-e, --entity ENTITY] [--spread] [-n COUNT]
+```
+
+Creates checks with random labels, check types, check details and host names.
+To specify an entity to create checks under, pass the `-e` or `--entity` option.
+To create many checks at once, pass the `-n` or `--count` option as an integer
+number of checks to create. The `--spread` option controls how the checks will
+be distributed in the case where `ENTITY` is not specified and `COUNT > 1`. In
+this case, if `--spread` is passed, checks will be distributed randomly to all
+of the user's entities; otherwise, pandamonium will randomly select one entity
+and create all the checks under it.
 
 ### Alarms
 
+```
+pm alarms create [-e, --entity ENTITY] [-c, --checks CHECKS] [-p, --notification_plans PLANS] [--spread] [-n COUNT]
+```
+
+Creates alarms with random labels and alarm criteria. To specify an entity to
+create alarms under, pass the `-e` or `--entity` option. To specify a list of
+check IDs to associate alarms with, pass the `-c` or `--checks` option. To
+specify a list of notification plans to use, pass the `-p` or
+`--notification_plans` option. To create many alarms at once, pass the `-n` or
+`--count` option as an integer number of alarms to create. The `--spread` option
+controls how the alarms will be distributed in the case where `CHECKS` is not
+specified or is a list of length greater than 1. In this case, `--spread`
+specifies that alarms should be distributed randomly to all checks in the list
+or all checks associated with the entity that is specified or that pandamonium
+chooses (when the entity is not specified).
+
 ### Notifications
+
+```
+pm notifications create [-n COUNT]
+```
+
+Creates notifications with random labels, types and details. To create many
+notifications at once, specify the `-n` or `--count` option as an integer
+number of notifications to create.
 
 ### Notification plans
 
+```
+pm notification_plans create [--notifications NOTIFICATIONS] [-n COUNT]
+```
+
+Creates notification plans with random labels. To specify a list of
+notifications to use in each plan, pass the `--notifications` option.
+If this option is not passed a random selection of notifications will be used
+for each new plan. To create many notification plans at once, pass the `-n` or
+`--count` option as an integer number of notification plans to create.
+
 ### Suppressions
+
+```
+pm suppressions create [--entities ENTITIES] [--alarms ALARMS] [--checks CHECKS] [--notification_plans PLANS] [--start_time START] [--end_time END] [--spread] [-n COUNT]
+```
+
+Creates suppressions with random labels. Suppressables are passed in using the
+`--entities`, `--alarms`, `--checks`, and `--notification_plans` options.
+Arguments for these options should be lists of IDs. If no suppressables are
+specified and the `--spread` option is passed, suppressions are applied randomly
+to the user's entities. If no suppressables are specified and the `--spread`
+option is not passed, a random entity is chosen and all suppressions are applied
+to that entity. If `--start_time` is present, suppressions will start at `START`,
+and if `--end_time` is present, suppressions will end at `END`. Otherwise, a
+random time bound will be chosen. To create many suppressions at once, pass
+the `-n` or `--count` option as an integer number of suppressions to create.
 
 ## Configuration
 
@@ -75,6 +151,9 @@ Here's an example.
 ```
 
 ## Contributing
+
+Pull requests are welcome! Just do your best to follow the existing conventions
+and document any new features or behavior you add.
 
 ## License
 
