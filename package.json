@@ -1,6 +1,6 @@
 {
   "name": "pandamonium",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Create random entities, checks, alarms, notification plans and suppressions in Rackspace Cloud Monitoring",
   "main": "index.js",
   "scripts": {
