@@ -27,8 +27,7 @@ $ pm [TYPE] create [OPTIONS]
 ```
 
 Pandamonium can be used to create, but not to destroy. This is important because
-you can quickly overrun your account's Cloud Monitoring limits for entities, checks
-or alarms. To view, edit and delete the resources that Pandamonium provisions, go
+you can quickly overrun your account's Cloud Monitoring limits for checks or alarms. To view, edit and delete the resources that Pandamonium provisions, go
 to the UI at [Rackspace Cloud Intelligence](https://intelligence.rackspace.com) or
 roll your own API client.
 
