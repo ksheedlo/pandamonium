@@ -46,6 +46,36 @@ roll your own API client.
 
 ## Configuration
 
+By default, pandamonium looks for a `.pmrc` file in your home directory. You can
+set the environment variable `PM_SETTINGS` that contains a file path that
+pandamonium should use instead. This file should be a JSON object containing the
+following contents:
+
+- `username` - Your Rackspace username. This is a required option.
+- `api_key` - Your Rackspace API key. This is also required.
+- `identity_endpoint` - An alternative identity endpoint to use instead of
+    the Rackspace default identity endpoint. This is useful for running
+    pandamonium against alternative backends such as
+    [Mimic](https://github.com/rackerlabs/mimic). If not set, pandamonium
+    will use [Rackspace Cloud Identity](http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Overview-d1e65.html).
+- `tenant_id` - Your Rackspace account number. This is not necessary when
+    authenticating against Rackspace Cloud Identity, but it helps alternative
+    backend services generate the correct endpoints. In particular, it is
+    necessary when running both pandamonium and Cloud Intelligence against Mimic.
+
+Here's an example.
+
+```js
+{
+  "username": "PandaAwesome",
+  "api_key": "ca3ec4b27bb98d54bda97627bb1b447e",
+  "identity_endpoint": "http://localhost:8900/identity/v2.0/tokens",
+  "tenant_id": "123456"
+}
+```
+
 ## Contributing
 
 ## License
+
+MIT
