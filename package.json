@@ -1,5 +1,5 @@
 {
-  "name": "pandamonkey",
+  "name": "pandamonium",
   "version": "1.0.0",
   "description": "Create random entities, checks, alarms, notification plans and suppressions in Rackspace Cloud Monitoring",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ksheedlo/pandamonkey.git"
+    "url": "https://github.com/ksheedlo/pandamonium.git"
   },
   "keywords": [
     "rackspace",
@@ -20,9 +20,9 @@
   "author": "Ken Sheedlo <ovrkenthousand@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ksheedlo/pandamonkey/issues"
+    "url": "https://github.com/ksheedlo/pandamonium/issues"
   },
-  "homepage": "https://github.com/ksheedlo/pandamonkey",
+  "homepage": "https://github.com/ksheedlo/pandamonium",
   "dependencies": {
     "async": "^0.9.0",
     "chance": "^0.7.0",
