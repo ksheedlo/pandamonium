@@ -3,6 +3,7 @@
 
 var entities = require('../lib/entities'),
   checks = require('../lib/checks'),
+  alarms = require('../lib/alarms'),
   notificationPlans = require('../lib/notification-plans'),
   notifications = require('../lib/notifications'),
   suppressions = require('../lib/suppressions'),
@@ -11,7 +12,8 @@ var entities = require('../lib/entities'),
 function usage() {
   console.log('Usage: ' + process.argv.slice(0, 2).join(' ') + 
     ' TYPE COMMAND [OPTIONS]\n\n' +
-    '\twhere TYPE can be one of: (entities|checks|notifications|notification_plans)');
+    '\twhere TYPE can be one of: (entities|checks|alarms|notifications|' +
+      'notification_plans|suppressions)');
 }
 
 if (process.argv.length < 3) {
@@ -34,6 +36,9 @@ var submodules = [{
 }, {
   module: suppressions,
   type: 'suppressions'
+}, {
+  module: alarms,
+  type: 'alarms'
 }];
 
 var module = _.findWhere(submodules, {type: process.argv[2]});
