@@ -170,6 +170,11 @@ Here's an example.
 Pull requests are welcome! Just do your best to follow the existing conventions
 and document any new features or behavior you add.
 
+We use [jshint](http://jshint.com/docs/) for linting and [Mocha](http://mochajs.org/)
+to run unit tests. You can check both in development by running `npm test`. If you
+make sure your code is lint free and add unit tests for any new features or bug
+fixes you submit, it'll help me merge your PR faster!
+
 ## License
 
 MIT
