@@ -3,6 +3,8 @@
   "curly": true,
   "eqeqeq": true,
   "globals": {
+    "after": false,
+    "before": false,
     "beforeEach": false,
     "describe": false,
     "it": false
