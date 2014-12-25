@@ -41,13 +41,13 @@ var submodules = [{
   type: 'alarms'
 }];
 
-var module = _.findWhere(submodules, {type: process.argv[2]});
-if (!module) {
+var module_ = _.findWhere(submodules, {type: process.argv[2]});
+if (!module_) {
   usage();
   process.exit(1);
 }
 
-module.module.runCommand(process.argv.slice(3), function (err) {
+module_.module.runCommand(process.argv.slice(3), function (err) {
   if (err) {
     console.error('An error occurred:', err);
     process.exit(1);
