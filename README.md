@@ -1,4 +1,4 @@
-pandamonium
+pandamonium ![](https://travis-ci.org/ksheedlo/pandamonium.svg?branch=master)
 ===========
 
 ![](http://e226c44521bc93014891-95071af5d2ef5fa7fb6048ccd0393c38.r12.cf1.rackcdn.com/panda-licking-chops.gif)
