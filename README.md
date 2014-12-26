@@ -66,7 +66,7 @@ creates 500 entities.
 ### Checks
 
 ```
-pm checks create [-e, --entity ENTITY] [--spread] [-n COUNT]
+$ pm checks create [-e, --entity ENTITY] [--spread] [-n COUNT]
 ```
 
 Creates checks with random labels, check types, check details and host names.
@@ -81,7 +81,7 @@ and create all the checks under it.
 ### Alarms
 
 ```
-pm alarms create [-e, --entity ENTITY] [-c, --checks CHECKS] [-p, --notification_plans PLANS] [--spread] [-n COUNT]
+$ pm alarms create [-e, --entity ENTITY] [-c, --checks CHECKS] [-p, --notification_plans PLANS] [--spread] [-n COUNT]
 ```
 
 Creates alarms with random labels and alarm criteria. To specify an entity to
@@ -99,7 +99,7 @@ chooses (when the entity is not specified).
 ### Notifications
 
 ```
-pm notifications create [-n COUNT]
+$ pm notifications create [-n COUNT]
 ```
 
 Creates notifications with random labels, types and details. To create many
@@ -109,7 +109,7 @@ number of notifications to create.
 ### Notification plans
 
 ```
-pm notification_plans create [--notifications NOTIFICATIONS] [-n COUNT]
+$ pm notification_plans create [--notifications NOTIFICATIONS] [-n COUNT]
 ```
 
 Creates notification plans with random labels. To specify a list of
@@ -121,7 +121,7 @@ for each new plan. To create many notification plans at once, pass the `-n` or
 ### Suppressions
 
 ```
-pm suppressions create [--entities ENTITIES] [--alarms ALARMS] [--checks CHECKS] [--notification_plans PLANS] [--start_time START] [--end_time END] [--spread] [-n COUNT]
+$ pm suppressions create [--entities ENTITIES] [--alarms ALARMS] [--checks CHECKS] [--notification_plans PLANS] [--start_time START] [--end_time END] [--spread] [-n COUNT]
 ```
 
 Creates suppressions with random labels. Suppressables are passed in using the
