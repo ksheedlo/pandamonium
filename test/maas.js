@@ -19,7 +19,6 @@ maas.__set__('auth', {
 });
 
 describe('maas', function () {
-
   beforeEach(function () {
     serviceCatalogCalls = 0;
     cache.put('entities', undefined);
