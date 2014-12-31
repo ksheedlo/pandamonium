@@ -58,7 +58,7 @@ describe('RequestBuffer', function () {
   });
 
   it('can tell if a request is pending', function () {
-    buffer.queue('foo', function(){});
+    buffer.queue('foo', function () {});
     expect(buffer.isPending('foo')).to.be.true();
     expect(buffer.isPending('bar')).to.be.false();
   });
