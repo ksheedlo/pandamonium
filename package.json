@@ -4,7 +4,11 @@
   "description": "Create random entities, checks, alarms, notification plans and suppressions in Rackspace Cloud Monitoring",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/jscs lib bin/pm test && ./node_modules/.bin/jshint lib bin/pm test && ./node_modules/.bin/mocha"
+    "prelint": "jscs lib bin/pm test",
+    "lint": "jshint lib bin/pm test",
+
+    "pretest": "npm run lint",
+    "test": "mocha"
   },
   "bin": {
     "pm": "./bin/pm"
