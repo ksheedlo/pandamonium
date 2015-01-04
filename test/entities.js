@@ -100,7 +100,7 @@ describe('Entity', function () {
             internet0_v4: "43.15.224.171"
           },
           metadata: {
-            pandamonium: 1419544462490
+            pandamonium: "1419544462490"
           },
           id: "en123456"
         });

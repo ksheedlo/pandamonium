@@ -100,7 +100,7 @@ describe('Notification', function () {
             phone_number: "+1395843652"
           },
           metadata: {
-            pandamonium: 1419544462490
+            pandamonium: "1419544462490"
           },
           id: "nt123456"
         });
