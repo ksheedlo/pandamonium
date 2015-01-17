@@ -9,8 +9,8 @@ var async = require('async'),
   nock = require('nock'),
   serviceCatalogCalls;
 
-maas.__set__('auth', {
-  getAuthTokenAndServiceCatalog: function (cb) {
+maas.__set__('client', {
+  authenticate: function (opts, cb) {
     serviceCatalogCalls++;
     process.nextTick(function () {
       cb(null, MOCK.serviceCatalog);
@@ -26,7 +26,7 @@ describe('maas', function () {
   });
 
   describe('.request', function () {
-    it('calls auth.getAuthTokenAndServiceCatalog', function (done) {
+    it('calls client#authenticate', function (done) {
       nock('https://monitoring.api.rackspacecloud.com')
         .get('/v1.0/987654/entities')
         .reply(200, { values: [], metadata: {} });
