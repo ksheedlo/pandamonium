@@ -3,6 +3,7 @@
 var async = require('async'),
   expect = require('chai').expect,
   cache = require('../lib/cache'),
+  config = require('../config'),
   rewire = require('rewire'),
   maas = rewire('../lib/maas'),
   MOCK = require('./mocks'),
@@ -10,8 +11,11 @@ var async = require('async'),
   serviceCatalogCalls;
 
 maas.__set__('client', {
-  authenticate: function (opts, cb) {
-    serviceCatalogCalls++;
+  authenticate: function () {
+    var args = Array.prototype.slice.call(arguments, 0),
+      cb = args[args.length - 1];
+
+    serviceCatalogCalls.push({ args: args });
     process.nextTick(function () {
       cb(null, MOCK.serviceCatalog);
     });
@@ -19,10 +23,21 @@ maas.__set__('client', {
 });
 
 describe('maas', function () {
+  var oldTenantId;
+
+  before(function () {
+    oldTenantId = config.TENANT_ID;
+    config.TENANT_ID = '123987';
+  });
+
   beforeEach(function () {
-    serviceCatalogCalls = 0;
+    serviceCatalogCalls = [];
     cache.put('entities', undefined);
     cache.put('entity.en31337AC', undefined);
+  });
+
+  after(function () {
+    config.TENANT_ID = oldTenantId;
   });
 
   describe('.request', function () {
@@ -37,7 +52,23 @@ describe('maas', function () {
         if (err) {
           return done(err);
         }
-        expect(serviceCatalogCalls).to.equal(1);
+        expect(serviceCatalogCalls.length).to.equal(1);
+        done();
+      });
+    });
+
+    it('passes the tenant id to client#authenticate', function (done) {
+      nock('https://monitoring.api.rackspacecloud.com')
+        .get('/v1.0/987654/entities')
+        .reply(200, { values: [], metadata: {} });
+
+      maas.request({
+        path: '/entities'
+      }, function (err) {
+        if (err) {
+          return done(err);
+        }
+        expect(serviceCatalogCalls[0].args[0].tenantId).to.equal('123987');
         done();
       });
     });
