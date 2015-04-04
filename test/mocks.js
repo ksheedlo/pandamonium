@@ -13,423 +13,332 @@ MOCK.serviceCatalog = {
       },
       "RAX-AUTH:authenticatedBy": [
         "APIKEY"
-        ]
+      ]
     },
-    serviceCatalog: [
-    {
+    serviceCatalog: [{
       name: "cloudBlockStorage",
-      endpoints: [
-      {
+      endpoints: [{
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.blockstorage.api.rackspacecloud.com/v1/987654"
-      },
-      {
+      }, {
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.blockstorage.api.rackspacecloud.com/v1/987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.blockstorage.api.rackspacecloud.com/v1/987654"
-      },
-      {
+      }, {
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.blockstorage.api.rackspacecloud.com/v1/987654"
-      }
-      ],
-        type: "volume"
-    },
-    {
+      }],
+      type: "volume"
+    }, {
       name: "cloudLoadBalancers",
-      endpoints: [
-      {
+      endpoints: [{
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.loadbalancers.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.loadbalancers.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.loadbalancers.api.rackspacecloud.com/v1.0/987654"
-      }
-      ],
-        type: "rax:load-balancer"
-    },
-    {
+      }],
+      type: "rax:load-balancer"
+    }, {
       name: "cloudDatabases",
-      endpoints: [
-      {
+      endpoints: [{
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.databases.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.databases.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.databases.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.databases.api.rackspacecloud.com/v1.0/987654"
-      }
-      ],
-        type: "rax:database"
-    },
-    {
+      }],
+      type: "rax:database"
+    }, {
       name: "cloudBackup",
-      endpoints: [
-      {
+      endpoints: [{
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.backup.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.backup.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.backup.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.backup.api.rackspacecloud.com/v1.0/987654"
-      }
-      ],
-        type: "rax:backup"
-    },
-    {
+      }],
+      type: "rax:backup"
+    }, {
       name: "cloudImages",
-      endpoints: [
-      {
+      endpoints: [{
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.images.api.rackspacecloud.com/v2"
-      },
-      {
+      }, {
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.images.api.rackspacecloud.com/v2"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.images.api.rackspacecloud.com/v2"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.images.api.rackspacecloud.com/v2"
-      }
-      ],
-        type: "image"
-    },
-    {
+      }],
+      type: "image"
+    }, {
       name: "cloudDNS",
-      endpoints: [
-      {
+      endpoints: [{
         tenantId: "987654",
         publicURL: "https://dns.api.rackspacecloud.com/v1.0/987654"
-      }
-      ],
-        type: "rax:dns"
-    },
-    {
+      }],
+      type: "rax:dns"
+    }, {
       name: "cloudServersOpenStack",
-      endpoints: [
-      {
+      endpoints: [{
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.servers.api.rackspacecloud.com/v2/987654",
         versionInfo: "https://iad.servers.api.rackspacecloud.com/v2",
         versionList: "https://iad.servers.api.rackspacecloud.com/",
         versionId: "2"
-      },
-      {
+      }, {
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.servers.api.rackspacecloud.com/v2/987654",
         versionInfo: "https://hkg.servers.api.rackspacecloud.com/v2",
         versionList: "https://hkg.servers.api.rackspacecloud.com/",
         versionId: "2"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.servers.api.rackspacecloud.com/v2/987654",
         versionInfo: "https://dfw.servers.api.rackspacecloud.com/v2",
         versionList: "https://dfw.servers.api.rackspacecloud.com/",
         versionId: "2"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.servers.api.rackspacecloud.com/v2/987654",
         versionInfo: "https://syd.servers.api.rackspacecloud.com/v2",
         versionList: "https://syd.servers.api.rackspacecloud.com/",
         versionId: "2"
-      }
-      ],
-        type: "compute"
-    },
-    {
+      }],
+      type: "compute"
+    }, {
       name: "cloudQueues",
-      endpoints: [
-      {
+      endpoints: [{
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.queues.api.rackspacecloud.com/v1/987654",
         internalURL: "https://snet-hkg.queues.api.rackspacecloud.com/v1/987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.queues.api.rackspacecloud.com/v1/987654",
         internalURL: "https://snet-syd.queues.api.rackspacecloud.com/v1/987654"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.queues.api.rackspacecloud.com/v1/987654",
         internalURL: "https://snet-dfw.queues.api.rackspacecloud.com/v1/987654"
-      },
-      {
+      }, {
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.queues.api.rackspacecloud.com/v1/987654",
         internalURL: "https://snet-iad.queues.api.rackspacecloud.com/v1/987654"
-      }
-      ],
-        type: "rax:queues"
-    },
-    {
+      }],
+      type: "rax:queues"
+    }, {
       name: "cloudBigData",
-      endpoints: [
-      {
+      endpoints: [{
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.bigdata.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.bigdata.api.rackspacecloud.com/v1.0/987654"
-      }
-      ],
-        type: "rax:bigdata"
-    },
-    {
+      }],
+      type: "rax:bigdata"
+    }, {
       name: "cloudOrchestration",
-      endpoints: [
-      {
+      endpoints: [{
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.orchestration.api.rackspacecloud.com/v1/987654"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.orchestration.api.rackspacecloud.com/v1/987654"
-      },
-      {
+      }, {
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.orchestration.api.rackspacecloud.com/v1/987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.orchestration.api.rackspacecloud.com/v1/987654"
-      }
-      ],
-        type: "orchestration"
-    },
-    {
+      }],
+      type: "orchestration"
+    }, {
       name: "autoscale",
-      endpoints: [
-      {
+      endpoints: [{
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.autoscale.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.autoscale.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.autoscale.api.rackspacecloud.com/v1.0/987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.autoscale.api.rackspacecloud.com/v1.0/987654"
-      }
-      ],
-        type: "rax:autoscale"
-    },
-    {
+      }],
+      type: "rax:autoscale"
+    }, {
       name: "cloudMetrics",
-      endpoints: [
-      {
+      endpoints: [{
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://global.metrics.api.rackspacecloud.com/v2.0/987654"
-      }
-      ],
-        type: "rax:cloudmetrics"
-    },
-    {
+      }],
+      type: "rax:cloudmetrics"
+    }, {
       name: "cloudFeeds",
-      endpoints: [
-      {
+      endpoints: [{
         region: "HKG",
         tenantId: "987654",
         publicURL: "https://hkg.feeds.api.rackspacecloud.com/987654",
         internalURL: "https://atom.prod.hkg1.us.ci.rackspace.net/987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "987654",
         publicURL: "https://syd.feeds.api.rackspacecloud.com/987654",
         internalURL: "https://atom.prod.syd2.us.ci.rackspace.net/987654"
-      },
-      {
+      }, {
         region: "IAD",
         tenantId: "987654",
         publicURL: "https://iad.feeds.api.rackspacecloud.com/987654",
         internalURL: "https://atom.prod.iad3.us.ci.rackspace.net/987654"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "987654",
         publicURL: "https://dfw.feeds.api.rackspacecloud.com/987654",
         internalURL: "https://atom.prod.dfw1.us.ci.rackspace.net/987654"
-      },
-      {
+      }, {
         region: "ORD",
         tenantId: "987654",
         publicURL: "https://ord.feeds.api.rackspacecloud.com/987654",
         internalURL: "https://atom.prod.ord1.us.ci.rackspace.net/987654"
-      }
-      ],
-        type: "rax:feeds"
-    },
-    {
+      }],
+      type: "rax:feeds"
+    }, {
       name: "cloudMonitoring",
-      endpoints: [
-      {
+      endpoints: [{
         tenantId: "987654",
         publicURL: "https://monitoring.api.rackspacecloud.com/v1.0/987654"
-      }
-      ],
-        type: "rax:monitor"
-    },
-    {
+      }],
+      type: "rax:monitor"
+    }, {
       name: "cloudFilesCDN",
-      endpoints: [
-      {
+      endpoints: [{
         region: "IAD",
         tenantId: "MossoCloudFS_987654",
         publicURL: "https://cdn5.clouddrive.com/v1/MossoCloudFS_987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "MossoCloudFS_987654",
         publicURL: "https://cdn4.clouddrive.com/v1/MossoCloudFS_987654"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "MossoCloudFS_987654",
         publicURL: "https://cdn1.clouddrive.com/v1/MossoCloudFS_987654"
-      },
-      {
+      }, {
         region: "HKG",
         tenantId: "MossoCloudFS_987654",
         publicURL: "https://cdn6.clouddrive.com/v1/MossoCloudFS_987654"
-      }
-      ],
-        type: "rax:object-cdn"
-    },
-    {
+      }],
+      type: "rax:object-cdn"
+    }, {
       name: "cloudFiles",
-      endpoints: [
-      {
+      endpoints: [{
         region: "IAD",
         tenantId: "MossoCloudFS_987654",
         publicURL: "https://storage101.iad3.clouddrive.com/v1/MossoCloudFS_987654",
         internalURL: "https://snet-storage101.iad3.clouddrive.com/v1/MossoCloudFS_987654"
-      },
-      {
+      }, {
         region: "SYD",
         tenantId: "MossoCloudFS_987654",
         publicURL: "https://storage101.syd2.clouddrive.com/v1/MossoCloudFS_987654",
         internalURL: "https://snet-storage101.syd2.clouddrive.com/v1/MossoCloudFS_987654"
-      },
-      {
+      }, {
         region: "DFW",
         tenantId: "MossoCloudFS_987654",
         publicURL: "https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_987654",
         internalURL: "https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_987654"
-      },
-      {
+      }, {
         region: "HKG",
         tenantId: "MossoCloudFS_987654",
         publicURL: "https://storage101.hkg1.clouddrive.com/v1/MossoCloudFS_987654",
         internalURL: "https://snet-storage101.hkg1.clouddrive.com/v1/MossoCloudFS_987654"
-      }
-      ],
-        type: "object-store"
+      }],
+      type: "object-store"
+    }],
+    user: {
+      id: "54b6f3983d63f36886ed3c2811b0960c",
+      roles: [{
+        tenantId: "MossoCloudFS_987654",
+        id: "5",
+        description: "A Role that allows a user access to keystone Service methods",
+        name: "object-store:default"
+      }, {
+        tenantId: "987654",
+        id: "6",
+        description: "A Role that allows a user access to keystone Service methods",
+        name: "compute:default"
+      }, {
+        id: "3",
+        description: "User Admin Role.",
+        name: "identity:user-admin"
+      }],
+      name: "testuser",
+      "RAX-AUTH:defaultRegion": "IAD"
     }
-    ],
-      user: {
-        id: "54b6f3983d63f36886ed3c2811b0960c",
-        roles: [
-        {
-          tenantId: "MossoCloudFS_987654",
-          id: "5",
-          description: "A Role that allows a user access to keystone Service methods",
-          name: "object-store:default"
-        },
-        {
-          tenantId: "987654",
-          id: "6",
-          description: "A Role that allows a user access to keystone Service methods",
-          name: "compute:default"
-        },
-        {
-          id: "3",
-          description: "User Admin Role.",
-          name: "identity:user-admin"
-        }
-        ],
-          name: "testuser",
-          "RAX-AUTH:defaultRegion": "IAD"
-      }
   }
 };
 
