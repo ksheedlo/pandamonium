@@ -3,8 +3,7 @@
 var Chance = require('chance'),
   expect = require('chai').expect,
   rewire = require('rewire'),
-  entitiesCreate = rewire('../lib/entities/create'),
-  entitiesList = rewire('../lib/entities/list'),
+  entities = rewire('../lib/entities'),
   maasQueryCalls,
   maasRequestCalls;
 
@@ -29,8 +28,7 @@ var MaasMock = {
   }
 };
 
-entitiesCreate.__set__('maas', MaasMock);
-entitiesList.__set__('maas', MaasMock);
+entities.__set__('maas', MaasMock);
 
 describe('Entity', function () {
   beforeEach(function () {
@@ -40,7 +38,7 @@ describe('Entity', function () {
 
   describe('.list', function () {
     it('calls maas.query', function (done) {
-      entitiesList.list(function (err, res) {
+      entities.list(function (err, res) {
         if (err) {
           return done(err);
         }
@@ -73,7 +71,7 @@ describe('Entity', function () {
     });
 
     it('makes the request to maas', function (done) {
-      entitiesCreate.create(chance, function (err) {
+      entities.create(chance, function (err) {
         var requestArgs;
 
         if (err) {
@@ -89,7 +87,7 @@ describe('Entity', function () {
     });
 
     it('creates a random entity', function (done) {
-      entitiesCreate.create(chance, function (err, entity) {
+      entities.create(chance, function (err, entity) {
         if (err) {
           return done(err);
         }

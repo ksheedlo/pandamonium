@@ -2,10 +2,10 @@
 
 var expect = require('chai').expect,
   rewire = require('rewire'),
-  alarmExamplesList = rewire('../lib/alarm-examples/list'),
+  alarmExamples = rewire('../lib/alarm-examples'),
   maasQueryCalls;
 
-alarmExamplesList.__set__('maas', {
+alarmExamples.__set__('maas', {
   query: function () {
     var args = Array.prototype.slice.call(arguments, 0),
       cb = args[1];
@@ -24,7 +24,7 @@ describe('AlarmExample', function () {
 
   describe('.list', function () {
     it('calls maas.query', function (done) {
-      alarmExamplesList.list(function (err, res) {
+      alarmExamples.list(function (err, res) {
         if (err) {
           return done(err);
         }

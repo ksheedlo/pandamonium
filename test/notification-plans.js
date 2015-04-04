@@ -2,10 +2,10 @@
 
 var expect = require('chai').expect,
   rewire = require('rewire'),
-  npList = rewire('../lib/notification-plans/list'),
+  notificationPlans = rewire('../lib/notification-plans'),
   maasQueryCalls;
 
-npList.__set__('maas', {
+notificationPlans.__set__('maas', {
   query: function () {
     var args = Array.prototype.slice.call(arguments, 0),
       cb = args[1];
@@ -24,7 +24,7 @@ describe('NotificationPlan', function () {
 
   describe('.list', function () {
     it('calls maas.query', function (done) {
-      npList.list(function (err, res) {
+      notificationPlans.list(function (err, res) {
         if (err) {
           return done(err);
         }

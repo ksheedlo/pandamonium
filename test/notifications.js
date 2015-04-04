@@ -3,8 +3,7 @@
 var Chance = require('chance'),
   expect = require('chai').expect,
   rewire = require('rewire'),
-  ntList = rewire('../lib/notifications/list'),
-  ntCreate = rewire('../lib/notifications/create'),
+  notifications = rewire('../lib/notifications'),
   maasQueryCalls,
   maasRequestCalls;
 
@@ -29,8 +28,7 @@ var MaasMock = {
   }
 };
 
-ntCreate.__set__('maas', MaasMock);
-ntList.__set__('maas', MaasMock);
+notifications.__set__('maas', MaasMock);
 
 describe('Notification', function () {
   beforeEach(function () {
@@ -40,7 +38,7 @@ describe('Notification', function () {
 
   describe('.list', function () {
     it('calls maas.query', function (done) {
-      ntList.list(function (err, res) {
+      notifications.list(function (err, res) {
         if (err) {
           return done(err);
         }
@@ -73,7 +71,7 @@ describe('Notification', function () {
     });
 
     it('makes the request to maas', function (done) {
-      ntCreate.create(chance, function (err) {
+      notifications.create(chance, function (err) {
         var maasRequestArg;
 
         if (err) {
@@ -89,7 +87,7 @@ describe('Notification', function () {
     });
 
     it('creates a random notification', function (done) {
-      ntCreate.create(chance, function (err, notification) {
+      notifications.create(chance, function (err, notification) {
         if (err) {
           return done(err);
         }

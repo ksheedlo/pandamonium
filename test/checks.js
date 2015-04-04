@@ -3,8 +3,7 @@
 var expect = require('chai').expect,
   Chance = require('chance'),
   rewire = require('rewire'),
-  checksCreate = rewire('../lib/checks/create'),
-  checksList = rewire('../lib/checks/list'),
+  checks = rewire('../lib/checks'),
   maasQueryCalls,
   maasRequestCalls;
 
@@ -29,8 +28,7 @@ var MaasMock = {
   }
 };
 
-checksCreate.__set__('maas', MaasMock);
-checksList.__set__('maas', MaasMock);
+checks.__set__('maas', MaasMock);
 
 describe('Check', function () {
   beforeEach(function () {
@@ -40,7 +38,7 @@ describe('Check', function () {
 
   describe('.list', function () {
     it('calls maas.query', function (done) {
-      checksList.list({ entityId: 'en123FOO' }, function (err, res) {
+      checks.list({ entityId: 'en123FOO' }, function (err, res) {
         if (err) {
           return done(err);
         }
@@ -73,7 +71,7 @@ describe('Check', function () {
     });
 
     it('makes the request to maas', function (done) {
-      checksCreate.create(chance, { entityId: 'en123456' }, function (err) {
+      checks.create(chance, { entityId: 'en123456' }, function (err) {
         var requestArgs;
 
         if (err) {
@@ -89,7 +87,7 @@ describe('Check', function () {
     });
 
     it('creates a random check', function (done) {
-      checksCreate.create(chance, {
+      checks.create(chance, {
         entityId: 'en123456'
       }, function (err, check) {
         if (err) {
