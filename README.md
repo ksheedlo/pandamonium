@@ -24,13 +24,16 @@ binary at `./bin/pm` from the root of the repo.
 All pandamonium commands take the following form:
 
 ```
-$ pm [TYPE] create [OPTIONS]
+$ pm [TYPE] [create|rollback|help] [OPTIONS]
 ```
 
-Pandamonium can be used to create, but not to destroy. This is important because
-you can quickly overrun your account's Cloud Monitoring limits for checks or alarms. To view, edit and delete the resources that Pandamonium provisions, go
-to the UI at [Rackspace Cloud Intelligence](https://intelligence.rackspace.com) or
-roll your own API client.
+Take care when running Pandamonium against your live Rackspace account. You can
+quickly overrun your account's Cloud Monitoring limits for checks or alarms. To
+view, edit and delete the resources that Pandamonium provisions, go to the UI at
+[Rackspace Cloud Intelligence](https://intelligence.rackspace.com) or roll your
+own API client. Work towards giving Pandamonium the ability to automatically clean
+up after itself is ongoing. See the `rollback` command on supported types for more
+information.
 
 **Important:** pandamonium is a stupid tool. It doesn't understand human-readable
 labels, and needs raw object IDs from Cloud Monitoring when you specify Cloud
@@ -49,6 +52,8 @@ is the best place to look it up.
 
 ### Entities
 
+#### Create entities
+
 ```
 $ pm entities create [-n COUNT]
 ```
@@ -62,6 +67,18 @@ $ pm entities create -n 500
 ```
 
 creates 500 entities.
+
+#### Rollback entities
+
+```
+$ pm entities rollback [--since TIMESTAMP] [--until TIMESTAMP]
+```
+
+Destroys entities that were created by Pandamonium, and optionally in a specified
+period of time. Pass `--since` to selectively destroy entities created after a
+given time, or `--until` to selectively destroy entities created before a given
+time. Both options may be specified together, or if neither is specified then all
+entities created by Pandamonium will be destroyed.
 
 ### Checks
 
